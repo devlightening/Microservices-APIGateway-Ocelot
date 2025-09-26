@@ -1,5 +1,4 @@
 
-````markdown
 # 🚀 Microservices API Gateway with Ocelot
 
 This project demonstrates how to build a **Microservices architecture** with an **API Gateway** using the **Ocelot** library in .NET.  
