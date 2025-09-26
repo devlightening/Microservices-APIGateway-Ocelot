@@ -73,6 +73,6 @@ The token is then added to the request as a **Bearer Token** in Insomnia.
 
 During testing, invalid or missing tokens result in proper error responses such as **401 Unauthorized**.
 
-<img width="1916" height="1023" alt="Authentication was not performed or was performed incorrectly" src="https://github.com/user-attachments/assets/f692d903-5269-4cb5-8c4a-17592ce41532" />
+<img width="1587" height="387" alt="Authentication was not performed or was performed incorrectly" src="https://github.com/user-attachments/assets/515e1a6d-d83b-4a6e-8f51-c1a4534e4b42" />
 
 ---
