@@ -4,7 +4,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthorization(options => options.AddPolicy("AdminPolicy", policy => policy.RequireClaim("Role", "Admin")));
+builder.Services.AddAuthorization(options => options.AddPolicy("AdminPolicy", policy => policy.RequireClaim("Roles", "Admin1")));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
     {
@@ -17,7 +17,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = builder.Configuration["Token:Issuer"],
             ValidAudience = builder.Configuration["Token:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
-            ClockSkew = TimeSpan.Zero
+            ClockSkew = TimeSpan.Zero,
         };
     });
 
@@ -30,6 +30,8 @@ app.UseAuthorization();
 //    .RequireAuthorization("AdminPolicy");
 
 
-app.MapGet("/", () => "API 1 - " + args[0]);
+app.MapGet("/", () => "API 1 is running...")
+   .RequireAuthorization("AdminPolicy");
+
 
 app.Run();

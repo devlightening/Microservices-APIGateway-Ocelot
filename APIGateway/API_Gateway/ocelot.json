@@ -10,7 +10,14 @@
         }
       ],
       "UpstreamPathTemplate": "/api1",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AllowedScopes": [],
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "Roles": "Admin1"
+      }
     },
     {
       "DownstreamPathTemplate": "/",
