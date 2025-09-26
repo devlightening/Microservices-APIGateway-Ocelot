@@ -15,20 +15,6 @@ It includes multiple APIs (API_1, API_2, API_3) and an API Gateway that manages 
 
 ---
 
-## 📊 Architecture Overview
-
-```mermaid
-flowchart TD
-    Client[Client / Insomnia] -->|Request| Gateway[API Gateway (Ocelot)]
-    Gateway -->|/api1| API1[API_1 (JWT Auth Required)]
-    Gateway -->|/api2| API2[API_2]
-    Gateway -->|/api3| API3[API_3]
-
-    API1 -->|Validate Token| AuthDB[(JWT Validation)]
-```
-
----
-
 ## ⚙️ Microservices
 
 ### 🔑 API_1 - Authentication & Authorization
